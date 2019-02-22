@@ -2,7 +2,7 @@
   "name": "browsers-db",
   "version": "1.0.0",
   "description": "A manager to query all browsers history (firefox, chromium...) in a unified interface",
-  "main": "cli.js",
+  "main": "BrowsersDB",
   "scripts": {
     "prepublishOnly": "npm test",
     "test": "standard"
