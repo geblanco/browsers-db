@@ -1,5 +1,5 @@
 /*
-  depends on sqlite3, chokidar, tmp, fs
+  depends on sqlite3, chokidar, async, tmp, fs
   global Logger
 */
 

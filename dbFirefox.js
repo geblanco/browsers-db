@@ -1,5 +1,5 @@
 /*
-  depends on find, os, Database
+  depends on upath, firefox-profile-path, Database
   global Logger
 */
 
@@ -10,11 +10,11 @@
 const { normalize, join } = require('upath')
 const Database = require(normalize(join(__dirname, 'Database')))
 // Until https://github.com/bluelovers/node-firefox-profile-path/pull/1 is ready
-const firefoxPath = require(normalize(join(__dirname, 'firefox-profile-find')))
+const firefoxPath = require('firefox-profile-path')
 
 let exp = {
   name: 'firefox',
-  file: '/home/gb/.mozilla/firefox/ah6frz2p.default/places.sqlite',
+  file: '',
   query: 'SELECT url, title FROM moz_places WHERE title LIKE ? ORDER BY last_visit_date DESC LIMIT 20',
   mode: 1
 }
@@ -22,7 +22,7 @@ let exp = {
 var _init = function () {
   exp.file = null
   try {
-    let pathList = firefoxPath.osProfileList()
+    let pathList = firefoxPath.os_profile_list()
     let pathProfiles = Object.keys(pathList).map(key => pathList[key])
     exp.file = pathProfiles.length ? normalize(join(pathProfiles[0], 'places.sqlite')) : null
   } catch (e) {
