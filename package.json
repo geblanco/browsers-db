@@ -1,6 +1,6 @@
 {
   "name": "browsers-db",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A manager to query all browsers history (firefox, chromium...) in a unified interface",
   "main": "BrowsersDB",
   "scripts": {
