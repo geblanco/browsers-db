@@ -19,8 +19,8 @@ class BrowsersDB {
       names = knownDbs
     }
     names = names instanceof Array ? names : [names]
-    names = names.map(d => d.toLowerCase()).filter(d => knownDbs.indexOf(d) !== -1)
-    this.dbNames = names.map((el, i) => dbScripts[i])
+    let indexes = names.map(d => knownDbs.indexOf(d.toLowerCase()))
+    this.dbNames = indexes.filter(i => i !== -1).map(i => dbScripts[i])
     this.dbs = []
     // Lazy loading, do not overwhelm constructor
   }
