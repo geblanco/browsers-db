@@ -13,7 +13,7 @@ const getAppDataPath = require('appdata-path')
 const exp = {
   name: 'chromium',
   file: upath.normalize(upath.join(getAppDataPath(), 'chromium/Default/History')),
-  query: 'SELECT url, title FROM urls WHERE title LIKE ? LIMIT 20',
+  query: 'SELECT url, title FROM urls WHERE url LIKE ? LIMIT 20',
   mode: 1
 }
 

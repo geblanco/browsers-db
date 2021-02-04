@@ -15,7 +15,7 @@ const firefoxPath = require('firefox-profile-path')
 let exp = {
   name: 'firefox',
   file: '',
-  query: 'SELECT url, title FROM moz_places WHERE title LIKE ? ORDER BY last_visit_date DESC LIMIT 20',
+  query: 'SELECT url, title FROM moz_places WHERE url LIKE ? ORDER BY last_visit_date DESC LIMIT 20',
   mode: 1
 }
 
